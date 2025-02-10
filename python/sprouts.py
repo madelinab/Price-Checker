@@ -8,3 +8,9 @@
 
 import pandas as pd
 from selenium import webdriver
+
+fruit_website = 'https://shop.sprouts.com/store/sprouts/collections/n-produce-fruits'
+path = '/Users/madelinarias/Documents/chromedriver-mac-arm64/chromedriver'
+driver = webdriver.Chrome(path)
+driver.get(fruit_website)
+driver.quit()
