@@ -1,4 +1,4 @@
-# Price Checer
+# Price Checker
 
 ### Objective: 
 Develop a method for users to compare prices for grocery items amongst a variety of stores.
