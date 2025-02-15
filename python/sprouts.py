@@ -8,9 +8,15 @@
 
 import pandas as pd
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
-fruit_website = 'https://shop.sprouts.com/store/sprouts/collections/n-produce-fruits'
-path = '/Users/madelinarias/Documents/chromedriver-mac-arm64/chromedriver'
-driver = webdriver.Chrome(path)
+#TODO: 
+# - Figure out how to get sprouts loaded faster
+# - Search for each aisle: fruit, vegetables, meat, dairy, grains, starches, supplements
+# - Get the contents of each aisle
+# - Store contents in a database location
+fruit_website = 'https://shop.sprouts.com/'
+driver = webdriver.Chrome()
 driver.get(fruit_website)
 driver.quit()
