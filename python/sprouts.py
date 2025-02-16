@@ -31,7 +31,7 @@ try:
     options = Options()
     options.add_argument("--window-size=1920x1080")
     options.add_argument("--verbose")
-    options.add_argument("--headless")
+    #options.add_argument("--headless")
 
     driver = webdriver.Chrome(options=options)
     driver.set_page_load_timeout(180)  # Set a higher page load timeout
@@ -51,7 +51,8 @@ try:
     wait = WebDriverWait(driver, 20)  # Wait for up to 20 seconds
 
     confirm_button = wait.until(
-        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Confirm')]"))
+        EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Confirm')]")) # the confirm button is in a <span> tag
+
     )
     
     confirm_button.click()
@@ -60,8 +61,8 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    print(driver.page_source)  # Prints the HTML of the current page
-    print(driver.current_url)   # Prints the current URL of the page
+    #print(driver.page_source)  # Prints the HTML of the current page
+    #print(driver.current_url)   # Prints the current URL of the page
 
 finally:
     time.sleep(5)  # keeps browser open for a few seconds before quitting

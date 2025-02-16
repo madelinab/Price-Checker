@@ -1,6 +1,7 @@
 ## Coding Sprouts.py
 2/15/2025 
 - 12:00pm PST - @madelinab - followed a tutorial on how to use selenium
+
 2/16/2025 
 - 07:00am PST - @madelinab - ran into issues getting the keys to work. StackOverflow recommended installing chromedriver through the terminal (link: https://stackoverflow.com/questions/66972241/install-chromedriver-on-mac-m1-at-specific-location)
 
@@ -12,14 +13,17 @@
 
 ```
     except Exception as e:
-    print(f"Error: {e}")
-    print(driver.page_source)  # Prints the HTML of the current page
-    print(driver.current_url)   # Prints the current URL of the page
+        print(f"Error: {e}")
+        print(driver.page_source)  # Prints the HTML of the current page
+        print(driver.current_url)   # Prints the current URL of the page
 ```
 
 ![print statements](./images/printing_sprouts_html_content.png)
 
-- 11:40am PST - @madelinab - ...
+- 12:18pm PST - @madelinab - double checked the tag the 'Confirm' button is in, it's actually inside a <span> tag, so I adjusted accordingly. IT WORKED!!
+
+![confirm button was clicked][./images/confirm_button_clicked.png]
+
 
 
 
