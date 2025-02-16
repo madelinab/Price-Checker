@@ -3,7 +3,8 @@
 # Created Date: 2/9/2025
 # Description: Scrapes Sprout's website to get all the items they have available
 # Revision:
-#           2/9/2025 - @madelinab - imported selenium to scrape dynamic web pages
+#           2/09/2025 - @madelinab - imported selenium to scrape dynamic web pages
+#           2/16/2025 - @madelinab - installed chromedriver through terminal using Homebrew
 ##############################################################################
 
 import pandas as pd
@@ -20,34 +21,47 @@ import time
 
 #TODO: 
 # - Figure out how to get sprouts loaded faster
-# - Search for each aisle: fruit, vegetables, meat, dairy, grains, starches, supplements
+# - Search for each category of item
 # - Get the contents of each aisle
 # - Store contents in a database location
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome('/opt/homebrew/bin/chromedriver')
+
 
 try:
-    # open sprouts page
-    website = 'https://shop.sprouts.com/store/sprouts/storefront'
+    options = Options()
+    options.add_argument("--window-size=1920x1080")
+    options.add_argument("--verbose")
+    options.add_argument("--headless")
 
-    driver.get(website)
+    driver = webdriver.Chrome(options=options)
+    driver.set_page_load_timeout(180)  # Set a higher page load timeout
 
-    time.sleep(3)  # wait for page to load
+    categories = ['https://shop.sprouts.com/store/sprouts/collections/n-produce', 
+                  'https://shop.sprouts.com/store/sprouts/collections/n-deli', 
+                  'https://shop.sprouts.com/store/sprouts/collections/n-bakery', 
+                  'https://shop.sprouts.com/store/sprouts/collections/n-bulk', 
+                  'https://shop.sprouts.com/store/sprouts/collections/n-dairy', 
+                  'https://shop.sprouts.com/store/sprouts/collections/n-meat-seafood', 
+                  'https://shop.sprouts.com/store/sprouts/collections/n-grocery-aisles', 
+                  'https://shop.sprouts.com/store/sprouts/collections/n-frozen'
+                  ]
+    driver.get(categories[0]) #test if it works on a different page
 
-    # when the page opens, it'll ask if you want in-store pickup or delivery,
-    # we want selenium to just click the 'confirm' button
-    confirm_button = driver.find_element(By.XPATH, "//button[contains(text(), 'Confirm')]").click()
+    # Wait for the delivery/pickup pop-up to appear
+    wait = WebDriverWait(driver, 20)  # Wait for up to 20 seconds
 
-    time.sleep(5)  # wait for progress
-
-    # search for a category
-    search_box = driver.find_element(By.XPATH, "//input[contains(text(), 'Search Sprouts Farmers Market')]").click()
-    search_box.send_keys('vegetables') # the aisle it needs to search for
-    search_box.send_keys(Keys.RETURN) # hit the 'enter' key
+    confirm_button = wait.until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Confirm')]"))
+    )
     
-    time.sleep(10) # puase to let the site load
+    confirm_button.click()
+
+    print('it clicked!')
 
 except Exception as e:
     print(f"Error: {e}")
+    print(driver.page_source)  # Prints the HTML of the current page
+    print(driver.current_url)   # Prints the current URL of the page
 
 finally:
     time.sleep(5)  # keeps browser open for a few seconds before quitting
