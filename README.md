@@ -1,14 +1,14 @@
 # Price Checker
 
-#### Purpose
+## Purpose
 A method for users to compare prices for grocery items amongst a variety of stores.
 
-#### Project Explores
+## Project Explores
 - Web Scraping
 - Data Storage & Data Architecture
 - Front-End Development
 
-#### Tools Used
+## Tools Used
 Data Packages:
 - Python
 - Selenium
