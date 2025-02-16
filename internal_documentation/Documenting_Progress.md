@@ -20,7 +20,7 @@
 
 ![print statements](./images/printing_sprouts_html_content.png)
 
-- 12:18pm PST - @madelinab - double checked the tag the 'Confirm' button is in, it's actually inside a <span> tag, so I adjusted accordingly. IT WORKED!!
+- 12:18pm PST - @madelinab - double checked the tag the 'Confirm' button is in, it's actually inside a span tag, so I adjusted accordingly. IT WORKED!!
 
 ![confirm button was clicked](./images/confirm_button_clicked.png)
 
