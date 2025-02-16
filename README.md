@@ -1,10 +1,27 @@
 # Price Checker
 
-### Objective: 
-Develop a method for users to compare prices for grocery items amongst a variety of stores.
+#### Purpose
+A method for users to compare prices for grocery items amongst a variety of stores.
 
-### Skills:
-- Working with APIs
-- Web Scraping (Python, Selenium)
-- Data Storage & Data Architecture (SQL)
-- Front-End Development (React.js)
+#### Project Explores
+- Web Scraping
+- Data Storage & Data Architecture
+- Front-End Development
+
+#### Tools Used
+Data Packages:
+- Python
+- Selenium
+- BeautifulSoup
+- SQLAlchemy
+
+Data Storage:
+- PostgreSQL
+
+Front-End:
+- HTML
+- CSS
+- React.js
+
+
+
