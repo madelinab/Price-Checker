@@ -56,8 +56,9 @@ try:
     )
     
     confirm_button.click()
+    print('It clicked!')
 
-    print('it clicked!')
+    
 
 except Exception as e:
     print(f"Error: {e}")

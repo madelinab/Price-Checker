@@ -1,9 +1,12 @@
+## About This Internal Documentation
+This file stores journal entries on my progress throughout the development of this project. Documenting the errors I get and my solutions here will enable me to quickly solve those problems later on, if I ever run into them again. 
+
 ## Coding Sprouts.py
 2/15/2025 
 - 12:00pm PST - @madelinab - followed a tutorial on how to use selenium
 
 2/16/2025 
-- 07:00am PST - @madelinab - ran into issues getting the keys to work. StackOverflow recommended installing chromedriver through the terminal (link: https://stackoverflow.com/questions/66972241/install-chromedriver-on-mac-m1-at-specific-location)
+- 07:00am PST - @madelinab - ran into issues getting the keys to work. In StackOverflow, it was recommended installing chromedriver through the terminal (link: https://stackoverflow.com/questions/66972241/install-chromedriver-on-mac-m1-at-specific-location)
 
 ![chromedriver successfully installed](./images/chromedriver_installed.png)
 
