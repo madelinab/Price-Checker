@@ -8,20 +8,20 @@ A method for users to compare prices for grocery items amongst a variety of stor
 - Data Storage & Data Architecture
 - Front-End Development
 
-#### Tools Used
+#### Tools Used / Will be Used
 Data Packages:
-- Python
-- Selenium
-- BeautifulSoup
-- SQLAlchemy
+- Python (In use)
+- Selenium (In use)
+- BeautifulSoup (In use)
+- SQLAlchemy (Not in use yet)
 
 Data Storage:
-- PostgreSQL
+- PostgreSQL (Not in use yet)
 
 Front-End:
-- HTML
-- CSS
-- React.js
+- HTML (Not in use yet)
+- CSS (Not in use yet)
+- React.js (Not in use yet)
 
 
 
