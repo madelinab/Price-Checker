@@ -27,6 +27,9 @@ This file stores journal entries on my progress throughout the development of th
 
 ![confirm button was clicked](./images/confirm_button_clicked.png)
 
+2/28/2025
+- 11:00pm PST - @madelinab - made the webdriver print out the page source info and it's html is no the same as when I inspect the page
+
 
 
 

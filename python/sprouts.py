@@ -31,7 +31,7 @@ try:
     options = Options()
     options.add_argument("--window-size=1920x1080")
     options.add_argument("--verbose")
-    #options.add_argument("--headless")
+    options.add_argument("--headless")
 
     driver = webdriver.Chrome(options=options)
     driver.set_page_load_timeout(180)  # Set a higher page load timeout
@@ -56,9 +56,14 @@ try:
     )
     
     confirm_button.click()
-    print('It clicked!')
+    print('Confirm button clicked!')
 
-    
+    time.sleep(10)
+
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+    print(soup.prettify())
+
 
 except Exception as e:
     print(f"Error: {e}")
